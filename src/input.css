@@ -19,7 +19,9 @@
 
 @layer base {
   html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+  html { overflow-x: clip; }
   body { @apply bg-white text-slate-800 antialiased; overflow-x: clip; }
+  main > section { overflow-x: clip; }       /* a picture waiting off to the side must never make the page scroll sideways */
   :focus-visible { @apply outline-2 outline-offset-2 outline-quill-500; }
 }
 

@@ -93,6 +93,8 @@ def main() -> None:
     helper.set_items([(None, "teal"), ("Era", "90s")])
     helper.set_voice_active(True)
     apply_spacing(helper.widget, "compact")
+    helper.help_button.setVisible(False)                             # (on a Mac Help and Undo sit in the title bar, so the Start button spans the width)
+    helper.undo_button.setVisible(False)
     helper.widget.resize(520, 470)                                   # tall enough that both rows show whole
     helper.show()
     settle(app)
