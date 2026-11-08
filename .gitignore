@@ -5,3 +5,6 @@ public/assets/site.css
 .DS_Store
 .vercel
 .env*
+promo/takes/
+promo/out/
+promo/tools/skgrab

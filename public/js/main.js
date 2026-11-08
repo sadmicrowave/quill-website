@@ -37,6 +37,20 @@
     targets.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
+  // --- the feature clips play (on repeat) only while they are on screen, and not at all if the visitor prefers less motion
+  var clips = document.querySelectorAll("video[data-clip]");
+  var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (clips.length && "IntersectionObserver" in window && !calm) {
+    var watcher = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var v = entry.target;
+        if (entry.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () { /* the poster stays */ }); }
+        else v.pause();
+      });
+    }, { threshold: 0.35 });
+    clips.forEach(function (v) { watcher.observe(v); });
+  }
+
   // --- the hero video: starts by itself (muted); a button pauses it
   var video = document.getElementById("hero-video");
   var toggle = document.getElementById("hero-toggle");

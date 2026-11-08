@@ -36,7 +36,7 @@
   <!-- hero: the promo video, full width, plays by itself -->
   <header id="top" class="relative isolate mt-16 aspect-video max-h-[calc(100svh-4rem)] w-full overflow-hidden bg-quill-950">
     <video id="hero-video" class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline preload="auto" poster="/assets/poster.jpg?v=3" aria-label="Quill taking dictation into a spreadsheet">
-      <source src="/assets/promo.mp4?v=3" type="video/mp4">
+      <source src="/assets/promo.mp4?v=4" type="video/mp4">
     </video>
     
 
@@ -50,17 +50,18 @@
   <main>
     <!-- 1. dictate -->
     <section id="talk" class="relative bg-white">
-      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:grid-cols-2 lg:gap-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:gap-16 lg:grid-cols-[5fr_7fr]">
         <div class="reveal-up">
           <p class="text-sm font-semibold uppercase tracking-widest text-quill-500">Dictate</p>
           <h2 class="mt-3 font-display text-4xl font-bold tracking-tight text-quill-900 sm:text-5xl">Just talk.</h2>
           <p class="mt-6 text-lg leading-8 text-slate-600">Say <em class="not-italic font-semibold text-quill-700">“black t-shirt, large, good condition, thirty five dollars.”</em> Each word you say is understood and placed in its column as you say it, and you can see it happen before anything is written.</p>
           <p class="mt-4 text-lg leading-8 text-slate-600">Say <em class="not-italic font-semibold text-quill-700">“next row”</em> and the row is saved into your spreadsheet. No typing, no clicking between cells.</p>
         </div>
-        <figure class="reveal-right justify-self-center lg:justify-self-end" style="transition-delay:120ms">
-          <div class="window w-full max-w-[560px] origin-center">
-            <div class="window-bar"><i class="bg-[#ff5f57]"></i><i class="bg-[#febc2e]"></i><i class="bg-[#28c840]"></i><span class="ml-3 text-sm text-slate-500">Quill</span></div>
-            <img src="/assets/screens/main.svg" alt="Quill listening: the words you said as pills, each value in its column, ready to save as a row" class="block w-full" width="453" height="446">
+        <figure class="reveal-right w-full" style="transition-delay:120ms">
+          <div class="overflow-hidden rounded-3xl bg-quill-50 shadow-2xl shadow-quill-900/25 ring-1 ring-black/5">
+            <video data-clip class="block aspect-video w-full" muted loop playsinline preload="metadata" poster="/assets/clips/dictate.jpg?v=2" aria-label="Quill taking dictation: each word lands in its column and the row appears in the spreadsheet">
+              <source src="/assets/clips/dictate.mp4?v=2" type="video/mp4">
+            </video>
           </div>
         </figure>
       </div>
@@ -68,11 +69,12 @@
 
     <!-- 2. term helper -->
     <section id="helper" class="relative bg-gradient-to-b from-quill-50 to-white">
-      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:grid-cols-2 lg:gap-20">
-        <figure class="reveal-left order-last justify-self-center lg:order-first lg:justify-self-start">
-          <div class="window w-full max-w-[560px]">
-            <div class="window-bar"><i class="bg-[#ff5f57]"></i><i class="bg-[#febc2e]"></i><i class="bg-[#28c840]"></i><span class="ml-3 text-sm text-slate-500">Term Helper</span></div>
-            <img src="/assets/screens/term-helper.svg" alt="The Term Helper asking which column a new word belongs to, with the voice button listening" class="block w-full" width="505" height="470">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:gap-16 lg:grid-cols-[7fr_5fr]">
+        <figure class="reveal-left order-last lg:order-first w-full">
+          <div class="overflow-hidden rounded-3xl bg-quill-50 shadow-2xl shadow-quill-900/25 ring-1 ring-black/5">
+            <video data-clip class="block aspect-video w-full" muted loop playsinline preload="metadata" poster="/assets/clips/helper.jpg?v=2" aria-label="The Term Helper being answered by voice">
+              <source src="/assets/clips/helper.mp4?v=2" type="video/mp4">
+            </video>
           </div>
         </figure>
         <div class="reveal-up">
@@ -86,16 +88,17 @@
 
     <!-- 3. it learns -->
     <section id="learns" class="relative bg-white">
-      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:grid-cols-2 lg:gap-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:gap-16 lg:grid-cols-[5fr_7fr]">
         <div class="reveal-up">
           <p class="text-sm font-semibold uppercase tracking-widest text-quill-500">It learns</p>
           <h2 class="mt-3 font-display text-4xl font-bold tracking-tight text-quill-900 sm:text-5xl">It learns your words, and your habits.</h2>
           <p class="mt-6 text-lg leading-8 text-slate-600">Say <em class="not-italic font-semibold text-quill-700">“sold means sale date”</em> once and Quill knows. Trim a stray word off a term (“kinda cream” to “cream”) and it skips that word from then on. Everything it has learned is listed in Settings, where you can edit or forget any of it.</p>
         </div>
-        <figure class="reveal-right justify-self-center lg:justify-self-end">
-          <div class="window w-full max-w-[600px]">
-            <div class="window-bar"><i class="bg-[#ff5f57]"></i><i class="bg-[#febc2e]"></i><i class="bg-[#28c840]"></i><span class="ml-3 text-sm text-slate-500">Quill Settings</span></div>
-            <img src="/assets/screens/settings-learned.svg" alt="Settings, Learned Words: the words Quill was taught, and the words it skips" class="block w-full" width="764" height="1010">
+        <figure class="reveal-right w-full">
+          <div class="overflow-hidden rounded-3xl bg-quill-50 shadow-2xl shadow-quill-900/25 ring-1 ring-black/5">
+            <video data-clip class="block aspect-video w-full" muted loop playsinline preload="metadata" poster="/assets/clips/learns.jpg?v=2" aria-label="Trimming a word off a term, teaching a word by voice, and the Learned Words in Settings">
+              <source src="/assets/clips/learns.mp4?v=2" type="video/mp4">
+            </video>
           </div>
         </figure>
       </div>
@@ -103,18 +106,12 @@
 
     <!-- 4. small when you need it -->
     <section class="relative bg-gradient-to-b from-white to-quill-50">
-      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:grid-cols-2 lg:gap-20">
-<figure class="reveal-left order-last justify-self-center lg:order-first lg:justify-self-start">
-          <!-- the mini view in proportion: it is a slim strip beside a normal spreadsheet window (Quill's real width is about 470 of this window's 840) -->
-          <div class="relative w-full max-w-[680px] pb-10">
-            <div class="window">
-              <div class="window-bar"><i class="bg-[#ff5f57]"></i><i class="bg-[#febc2e]"></i><i class="bg-[#28c840]"></i><span class="ml-3 text-sm text-slate-500">Inventory</span></div>
-              <table class="w-full text-left text-[10px] leading-tight text-slate-700 sm:text-xs [&_td]:whitespace-nowrap [&_th]:whitespace-nowrap" aria-hidden="true">
-                <thead><tr class="bg-quill-500 text-white"><th class="px-3 py-2 font-semibold">Category</th><th class="px-3 py-2 font-semibold">Gender</th><th class="px-3 py-2 font-semibold">Size</th><th class="px-3 py-2 font-semibold">Brand</th><th class="px-3 py-2 font-semibold">Color</th><th class="hidden sm:table-cell px-3 py-2 font-semibold">Condition</th><th class="hidden sm:table-cell px-3 py-2 font-semibold">Purchase Date</th></tr></thead>
-                <tbody><tr class="border-t border-slate-200"><td class="px-3 py-1.5">Jacket</td><td class="px-3 py-1.5">Men</td><td class="px-3 py-1.5">L</td><td class="px-3 py-1.5">Carhartt</td><td class="px-3 py-1.5">Brown</td><td class="hidden sm:table-cell px-3 py-1.5">Good</td><td class="hidden sm:table-cell px-3 py-1.5">2026-09-29</td></tr><tr class="border-t border-slate-200"><td class="px-3 py-1.5">T-Shirt</td><td class="px-3 py-1.5">Women</td><td class="px-3 py-1.5">S</td><td class="px-3 py-1.5">Nike</td><td class="px-3 py-1.5">White</td><td class="hidden sm:table-cell px-3 py-1.5">Excellent</td><td class="hidden sm:table-cell px-3 py-1.5">2026-10-18</td></tr><tr class="border-t border-slate-200"><td class="px-3 py-1.5">Sweater</td><td class="px-3 py-1.5">Unisex</td><td class="px-3 py-1.5">M</td><td class="px-3 py-1.5">Patagonia</td><td class="px-3 py-1.5">Navy</td><td class="hidden sm:table-cell px-3 py-1.5">Fair</td><td class="hidden sm:table-cell px-3 py-1.5">2026-10-30</td></tr><tr class="border-t border-slate-200"><td class="px-3 py-1.5">Hoodie</td><td class="px-3 py-1.5">Women</td><td class="px-3 py-1.5">L</td><td class="px-3 py-1.5">Patagonia</td><td class="px-3 py-1.5">Teal</td><td class="hidden sm:table-cell px-3 py-1.5">Excellent</td><td class="hidden sm:table-cell px-3 py-1.5">2026-11-05</td></tr><tr class="border-t border-slate-200"><td class="px-3 py-1.5">Jeans</td><td class="px-3 py-1.5">Men</td><td class="px-3 py-1.5">XL</td><td class="px-3 py-1.5">Levi's</td><td class="px-3 py-1.5">Black</td><td class="hidden sm:table-cell px-3 py-1.5">Good</td><td class="hidden sm:table-cell px-3 py-1.5">2026-11-06</td></tr><tr class="border-t border-slate-200"><td class="px-3 py-1.5">Dress</td><td class="px-3 py-1.5">Women</td><td class="px-3 py-1.5">S</td><td class="px-3 py-1.5">Adidas</td><td class="px-3 py-1.5">White</td><td class="hidden sm:table-cell px-3 py-1.5">Good</td><td class="hidden sm:table-cell px-3 py-1.5">2026-11-07</td></tr><tr class="border-t border-slate-200"><td class="px-3 py-1.5"></td><td class="px-3 py-1.5"></td><td class="px-3 py-1.5"></td><td class="px-3 py-1.5"></td><td class="px-3 py-1.5"></td><td class="hidden sm:table-cell px-3 py-1.5"></td><td class="hidden sm:table-cell px-3 py-1.5"></td></tr><tr class="border-t border-slate-200"><td class="px-3 py-1.5"></td><td class="px-3 py-1.5"></td><td class="px-3 py-1.5"></td><td class="px-3 py-1.5"></td><td class="px-3 py-1.5"></td><td class="hidden sm:table-cell px-3 py-1.5"></td><td class="hidden sm:table-cell px-3 py-1.5"></td></tr></tbody>
-              </table>
-            </div>
-            <img src="/assets/screens/mini.svg" alt="Quill's mini view: a slim strip floating over the corner of a spreadsheet, with the Stop button, the Term Helper count and Next Row" class="absolute bottom-6 right-[4%] w-[64%] rounded-xl shadow-2xl shadow-quill-900/40 ring-1 ring-black/10" width="470" height="58">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:gap-16 lg:grid-cols-[7fr_5fr]">
+<figure class="reveal-left order-last lg:order-first w-full">
+          <div class="overflow-hidden rounded-3xl bg-quill-50 shadow-2xl shadow-quill-900/25 ring-1 ring-black/5">
+            <video data-clip class="block aspect-video w-full" muted loop playsinline preload="metadata" poster="/assets/clips/mini.jpg?v=2" aria-label="Quill's mini view, a slim strip over the corner of a spreadsheet">
+              <source src="/assets/clips/mini.mp4?v=2" type="video/mp4">
+            </video>
           </div>
         </figure>
         <div class="reveal-up">
