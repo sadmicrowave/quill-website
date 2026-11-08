@@ -3,3 +3,5 @@ build/
 public/assets/site.css
 .vercel/
 .DS_Store
+.vercel
+.env*

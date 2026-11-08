@@ -17,31 +17,31 @@
 <body>
 
   <!-- nav -->
-  <nav id="nav" data-solid="false" class="group/nav fixed inset-x-0 top-0 z-50 transition data-[solid=true]:bg-white/85 data-[solid=true]:shadow-sm data-[solid=true]:backdrop-blur-md" aria-label="Main">
+  <nav id="nav" data-solid="true" class="group/nav fixed inset-x-0 top-0 z-50 bg-white/90 shadow-sm backdrop-blur-md" aria-label="Main">
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
       <a href="#top" class="flex items-center gap-3" aria-label="Quill, back to the top">
         <img src="/assets/icon-512.png" alt="" class="size-9 rounded-[10px] shadow-md shadow-black/20">
-        <span class="font-display text-xl font-semibold tracking-tight text-white group-data-[solid=true]/nav:text-quill-900">Quill</span>
+        <span class="font-display text-xl font-semibold tracking-tight text-quill-900">Quill</span>
       </a>
-      <div class="hidden items-center gap-8 text-sm font-medium text-white/90 group-data-[solid=true]/nav:text-slate-700 md:flex">
-        <a href="#talk" class="hover:text-white group-data-[solid=true]/nav:hover:text-quill-600">Dictate</a>
-        <a href="#helper" class="hover:text-white group-data-[solid=true]/nav:hover:text-quill-600">Term Helper</a>
-        <a href="#learns" class="hover:text-white group-data-[solid=true]/nav:hover:text-quill-600">It learns</a>
-        <a href="#private" class="hover:text-white group-data-[solid=true]/nav:hover:text-quill-600">Private</a>
+      <div class="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
+        <a href="#talk" class="hover:text-quill-600">Dictate</a>
+        <a href="#helper" class="hover:text-quill-600">Term Helper</a>
+        <a href="#learns" class="hover:text-quill-600">It learns</a>
+        <a href="#private" class="hover:text-quill-600">Private</a>
       </div>
       <a href="#download" class="btn btn-brand !px-5 !py-2 text-sm">Download</a>
     </div>
   </nav>
 
   <!-- hero: the promo video, full width, plays by itself -->
-  <header id="top" class="relative isolate aspect-video max-h-[100svh] min-h-[360px] w-full overflow-hidden bg-quill-950">
+  <header id="top" class="relative isolate mt-16 aspect-video max-h-[calc(100svh-4rem)] min-h-[360px] w-full overflow-hidden bg-quill-950">
     <video id="hero-video" class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline preload="auto" poster="/assets/poster.jpg" aria-label="Quill taking dictation into a spreadsheet">
       <source src="/assets/promo.mp4" type="video/mp4">
     </video>
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/45 to-transparent"></div>
+    
 
     <!-- the Download now call to action, in the top corner of the player -->
-    <a href="#download" class="btn btn-primary absolute right-5 top-20 z-10 sm:right-8" data-cta="hero">
+    <a href="#download" class="btn btn-primary absolute right-5 top-5 z-10 sm:right-8" data-cta="hero">
       <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 20h16"/></svg>
       Download now
     </a>
@@ -78,7 +78,7 @@
         <figure class="reveal-left order-last justify-self-center lg:order-first lg:justify-self-start">
           <div class="window w-full max-w-[560px]">
             <div class="window-bar"><i class="bg-[#ff5f57]"></i><i class="bg-[#febc2e]"></i><i class="bg-[#28c840]"></i><span class="ml-3 text-sm text-slate-500">Term Helper</span></div>
-            <img src="/assets/screens/term-helper.svg" alt="The Term Helper asking which column a new word belongs to, with the voice button listening" class="block w-full" width="505" height="410">
+            <img src="/assets/screens/term-helper.svg" alt="The Term Helper asking which column a new word belongs to, with the voice button listening" class="block w-full" width="505" height="470">
           </div>
         </figure>
         <div class="reveal-up">
@@ -101,7 +101,7 @@
         <figure class="reveal-right justify-self-center lg:justify-self-end">
           <div class="window w-full max-w-3xl">
             <div class="window-bar"><i class="bg-[#ff5f57]"></i><i class="bg-[#febc2e]"></i><i class="bg-[#28c840]"></i><span class="ml-3 text-sm text-slate-500">Quill Settings</span></div>
-            <img src="/assets/screens/settings-learned.svg" alt="Settings, Learned Words: the words Quill was taught, and the words it skips" class="block w-full" width="928" height="640">
+            <img src="/assets/screens/settings-learned.svg" alt="Settings, Learned Words: the words Quill was taught, and the words it skips" class="block w-full" width="960" height="1010">
           </div>
         </figure>
       </div>
@@ -111,15 +111,15 @@
     <section class="relative bg-gradient-to-b from-white to-quill-50">
       <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:grid-cols-2 lg:gap-20">
         <figure class="reveal-left order-last justify-self-center lg:order-first lg:justify-self-start">
-          <div class="window w-full max-w-[460px]">
+          <div class="window w-full max-w-[560px]">
             <div class="window-bar"><i class="bg-[#ff5f57]"></i><i class="bg-[#febc2e]"></i><i class="bg-[#28c840]"></i><span class="ml-3 text-sm text-slate-500">Quill</span></div>
-            <img src="/assets/screens/mini.svg" alt="Quill's mini view: a small overlay that floats beside your spreadsheet" class="block w-full" width="360" height="186">
+            <img src="/assets/screens/mini.svg" alt="Quill's mini view: a small overlay that floats beside your spreadsheet" class="block w-full" width="470" height="58">
           </div>
         </figure>
         <div class="reveal-up">
           <p class="text-sm font-semibold uppercase tracking-widest text-quill-500">Mini view</p>
           <h2 class="mt-3 font-display text-4xl font-bold tracking-tight text-quill-900 sm:text-5xl">Small when you need it.</h2>
-          <p class="mt-6 text-lg leading-8 text-slate-600">Shrink Quill to a little overlay that floats beside your spreadsheet. It shows what it heard and the row so far, and stays out of the way of your work.</p>
+          <p class="mt-6 text-lg leading-8 text-slate-600">Shrink Quill to a slim strip that floats beside your spreadsheet: Start or Stop, the Term Helper count and Next Row, nothing else. Drag it taller whenever you want to see the words it heard and the row so far.</p>
         </div>
       </div>
     </section>
@@ -132,10 +132,22 @@
           <h2 class="mt-3 font-display text-4xl font-bold tracking-tight text-quill-900 sm:text-5xl">The spreadsheet you already have.</h2>
           <p class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">Excel, Numbers and LibreOffice Calc, with rows appearing live in the open document as you speak. Quill reads your own headings and drop-down lists, so there is nothing to set up, and nothing to learn about templates.</p>
           <ul class="mt-10 flex flex-wrap justify-center gap-3 text-sm font-semibold text-quill-800">
-            <li class="rounded-full bg-white px-5 py-2 shadow-sm ring-1 ring-quill-100">Microsoft Excel</li>
-            <li class="rounded-full bg-white px-5 py-2 shadow-sm ring-1 ring-quill-100">Apple Numbers</li>
-            <li class="rounded-full bg-white px-5 py-2 shadow-sm ring-1 ring-quill-100">LibreOffice Calc</li>
-            <li class="rounded-full bg-white px-5 py-2 shadow-sm ring-1 ring-quill-100">.xlsx and .csv files</li>
+            <li class="flex items-center gap-3 rounded-full bg-white py-2 pl-3 pr-5 shadow-sm ring-1 ring-quill-100">
+              <!-- Microsoft Excel, line art: the stack of cells and the X tile -->
+              <svg class="size-7 shrink-0 text-slate-900" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="17" y="6" width="27" height="36" rx="3"/><path d="M17 15h27M17 24h27M17 33h27M30.500 6v36"/><rect x="3" y="14" width="22" height="22" rx="4" fill="#fff"/><path d="M9.500 20.500l9 9M18.500 20.500l-9 9"/></svg>
+              Microsoft Excel</li>
+            <li class="flex items-center gap-3 rounded-full bg-white py-2 pl-3 pr-5 shadow-sm ring-1 ring-quill-100">
+              <!-- Apple Numbers, line art: the rounded tile, three bars and the base line -->
+              <svg class="size-7 shrink-0 text-slate-900" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="40" height="40" rx="10"/><rect x="11" y="24" width="7" height="11" rx="3.500"/><rect x="20.500" y="13" width="7" height="22" rx="3.500"/><rect x="30" y="19" width="7" height="16" rx="3.500"/><path d="M11 39.500h26"/></svg>
+              Apple Numbers</li>
+            <li class="flex items-center gap-3 rounded-full bg-white py-2 pl-3 pr-5 shadow-sm ring-1 ring-quill-100">
+              <!-- LibreOffice Calc, line art: the page with its folded corner and the table -->
+              <svg class="size-7 shrink-0 text-slate-900" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4h19l9 9v31H11z"/><path d="M30 4v9h9"/><rect x="16" y="21" width="17" height="17" rx="1"/><path d="M16 27h17M16 33h17M24.500 21v17"/></svg>
+              LibreOffice Calc</li>
+            <li class="flex items-center gap-3 rounded-full bg-white py-2 pl-3 pr-5 shadow-sm ring-1 ring-quill-100">
+              <!-- a plain file: .xlsx and .csv -->
+              <svg class="size-7 shrink-0 text-slate-900" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4h19l9 9v31H11z"/><path d="M30 4v9h9"/><path d="M17 24h16M17 30h16M17 36h9"/></svg>
+              .xlsx and .csv files</li>
           </ul>
         </div>
       </div>

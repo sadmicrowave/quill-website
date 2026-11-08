@@ -18,7 +18,7 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
   body { @apply bg-white text-slate-800 antialiased; overflow-x: clip; }
   :focus-visible { @apply outline-2 outline-offset-2 outline-quill-500; }
 }

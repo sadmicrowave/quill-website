@@ -50,10 +50,15 @@ def to_pdf(widget, name: str, crop_top: int = 0) -> None:
 
 
 def native(window: MainWindow) -> MainWindow:
-    """Hide the in-window icon buttons, as on macOS where they sit in the title bar."""
+    """Hide the in-window icon buttons and menu bar, as on macOS where they sit in the title bar and the screen's menu bar."""
     for what in ("help", "undo", "settings", "mini", "file", "turn"):
         getattr(window, f"set_native_{what}_button")(True)
     return window
+
+
+def settle(app, window=None) -> None:
+    for _ in range(25):
+        app.processEvents()
 
 
 def main() -> None:
@@ -74,10 +79,11 @@ def main() -> None:
     main_window.add_stream_text("black t-shirt large good appraisal thirty five")
     main_window.update_current_row({"Type": "T-Shirt", "Color": "Black", "Size": "L", "Condition": "Good", "Appraisal": 35})
     main_window.set_last_saved("Row 6", {"Type": "Blouse", "Color": "Navy", "Size": "M"})
-    main_window.widget.resize(430, 470)
+    main_window.widget.menuBar().hide()                              # (the menu bar is at the top of the screen on a Mac)
+    main_window.widget.resize(453, 470)
     main_window.widget.show()
-    app.processEvents()
-    to_pdf(main_window.widget, "main", crop_top=24)                  # (the in-window menu bar is at the top of the screen on a Mac)
+    settle(app)
+    to_pdf(main_window.widget, "main")
 
     # 2. the Term Helper, answering by voice
     vocab = Vocabulary()
@@ -87,9 +93,9 @@ def main() -> None:
     helper.set_items([(None, "teal"), ("Era", "90s")])
     helper.set_voice_active(True)
     apply_spacing(helper.widget, "compact")
-    helper.widget.resize(520, 410)
+    helper.widget.resize(520, 470)                                   # tall enough that both rows show whole
     helper.show()
-    app.processEvents()
+    settle(app)
     to_pdf(helper.widget, "term-helper")
 
     # 3. Settings > Learned Words (a word taught by voice, and a word to skip)
@@ -102,9 +108,9 @@ def main() -> None:
     dialog = SettingsDialog(settings)
     window = dialog.build()
     dialog.nav.setCurrentRow(dialog._nav_row("Learned Words"))
-    window.resize(900, 640)
+    window.resize(960, 1010)
     window.show()
-    app.processEvents()
+    settle(app)
     to_pdf(window, "settings-learned")
 
     # 4. the mini view
@@ -112,15 +118,13 @@ def main() -> None:
     mini.setup()
     mini.set_mini(True)
     mini.set_listening_indicator(True)
-    mini.set_stream_classifier(lambda words: [WordMatch(w in known, "Color") for w in words])
-    mini.add_stream_text("navy blue jacket large")
-    mini.update_current_row({"Type": "Jacket", "Color": "Navy Blue", "Size": "L"})
     mini.set_sorting_count(2)
     mini.refresh_icons(colors["text"], colors["on_accent"], colors["accent"])
-    mini.widget.resize(360, 210)
+    mini.widget.menuBar().hide()
+    mini.widget.resize(MainWindow.MINI_WIDTH, 58)                    # the real mini view: only the status row (no heard words, no grid)
     mini.widget.show()
-    app.processEvents()
-    to_pdf(mini.widget, "mini", crop_top=24)
+    settle(app)
+    to_pdf(mini.widget, "mini")
 
 
 if __name__ == "__main__":
