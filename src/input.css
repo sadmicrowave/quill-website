@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@source "../public/**/*.{html,js}";
+
+@theme {
+  --font-sans: ui-sans-serif, -apple-system, "SF Pro Text", "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-display: ui-sans-serif, -apple-system, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+  --color-quill-50: #f5f1ff;
+  --color-quill-100: #ece4ff;
+  --color-quill-200: #d9c9ff;
+  --color-quill-300: #c0a6f5;
+  --color-quill-400: #9d7ae3;
+  --color-quill-500: #7a55c2;
+  --color-quill-600: #6540a8;
+  --color-quill-700: #523488;
+  --color-quill-800: #3b2480;
+  --color-quill-900: #261655;
+  --color-quill-950: #170d36;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply bg-white text-slate-800 antialiased; overflow-x: clip; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-quill-500; }
+}
+
+/* A feature's picture eases in from the margin of the page as it scrolls into view (see js/main.js). */
+@layer components {
+  .reveal-left, .reveal-right, .reveal-up {
+    opacity: 0;
+    transition: opacity 900ms cubic-bezier(.2,.7,.2,1), transform 1100ms cubic-bezier(.2,.7,.2,1);
+    will-change: transform, opacity;
+  }
+  .reveal-left { transform: translateX(-32vw); }
+  .reveal-right { transform: translateX(32vw); }
+  .reveal-up { transform: translateY(2.5rem); }
+  .is-visible { opacity: 1; transform: none; }
+
+  .window {
+    @apply overflow-hidden rounded-2xl bg-white shadow-2xl shadow-quill-900/25 ring-1 ring-black/5;
+  }
+  .window-bar { @apply flex h-9 items-center gap-2 bg-quill-50 px-4; }
+  .window-bar i { @apply block size-3 rounded-full; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold transition; }
+  .btn-primary { @apply bg-white text-quill-800 shadow-lg shadow-black/20 hover:bg-quill-50; }
+  .btn-brand { @apply bg-quill-600 text-white shadow-lg shadow-quill-900/30 hover:bg-quill-500; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal-left, .reveal-right, .reveal-up { opacity: 1; transform: none; transition: none; }
+}

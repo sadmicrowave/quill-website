@@ -1,0 +1,16 @@
+{
+  "name": "quill-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The front-facing landing page and download pages for Quill, deployed on Vercel.",
+  "scripts": {
+    "build": "tailwindcss -i src/input.css -o public/assets/site.css --minify",
+    "dev": "tailwindcss -i src/input.css -o public/assets/site.css --watch",
+    "preview": "npx --yes serve public",
+    "screens": "../quill-dictation-app/.venv/bin/python tools/make_pdfs.py && python3 tools/pdf_to_svg.py"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}

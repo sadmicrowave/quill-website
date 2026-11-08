@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quill: say it, and it's in your spreadsheet</title>
+  <meta name="description" content="Quill turns your voice into spreadsheet rows. Talk, and each value lands in the right column of Excel, Numbers or LibreOffice. Private: speech recognition runs on your computer.">
+  <meta name="theme-color" content="#7a55c2">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:title" content="Quill: Say It. With Quill.">
+  <meta property="og:description" content="Dictate into your spreadsheet. Each value lands in the right column as you say it.">
+  <meta property="og:image" content="/assets/poster.jpg">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- nav -->
+  <nav id="nav" data-solid="false" class="group/nav fixed inset-x-0 top-0 z-50 transition data-[solid=true]:bg-white/85 data-[solid=true]:shadow-sm data-[solid=true]:backdrop-blur-md" aria-label="Main">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+      <a href="#top" class="flex items-center gap-3" aria-label="Quill, back to the top">
+        <img src="/assets/icon-512.png" alt="" class="size-9 rounded-[10px] shadow-md shadow-black/20">
+        <span class="font-display text-xl font-semibold tracking-tight text-white group-data-[solid=true]/nav:text-quill-900">Quill</span>
+      </a>
+      <div class="hidden items-center gap-8 text-sm font-medium text-white/90 group-data-[solid=true]/nav:text-slate-700 md:flex">
+        <a href="#talk" class="hover:text-white group-data-[solid=true]/nav:hover:text-quill-600">Dictate</a>
+        <a href="#helper" class="hover:text-white group-data-[solid=true]/nav:hover:text-quill-600">Term Helper</a>
+        <a href="#learns" class="hover:text-white group-data-[solid=true]/nav:hover:text-quill-600">It learns</a>
+        <a href="#private" class="hover:text-white group-data-[solid=true]/nav:hover:text-quill-600">Private</a>
+      </div>
+      <a href="#download" class="btn btn-brand !px-5 !py-2 text-sm">Download</a>
+    </div>
+  </nav>
+
+  <!-- hero: the promo video, full width, plays by itself -->
+  <header id="top" class="relative isolate aspect-video max-h-[100svh] min-h-[360px] w-full overflow-hidden bg-quill-950">
+    <video id="hero-video" class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline preload="auto" poster="/assets/poster.jpg" aria-label="Quill taking dictation into a spreadsheet">
+      <source src="/assets/promo.mp4" type="video/mp4">
+    </video>
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/45 to-transparent"></div>
+
+    <!-- the Download now call to action, in the top corner of the player -->
+    <a href="#download" class="btn btn-primary absolute right-5 top-20 z-10 sm:right-8" data-cta="hero">
+      <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 20h16"/></svg>
+      Download now
+    </a>
+
+    <h1 class="sr-only">Quill: Say It. With Quill. Talk, and each value lands in the right column of your spreadsheet.</h1>
+    <button id="hero-toggle" type="button" class="group absolute bottom-5 right-5 z-10 grid size-11 place-items-center rounded-full bg-black/35 text-white backdrop-blur transition hover:bg-black/55" aria-label="Pause the video" data-paused="false">
+      <svg class="size-5 group-data-[paused=true]:hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      <svg class="hidden size-5 group-data-[paused=true]:block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <!-- 1. dictate -->
+    <section id="talk" class="relative bg-white">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:grid-cols-2 lg:gap-20">
+        <div class="reveal-up">
+          <p class="text-sm font-semibold uppercase tracking-widest text-quill-500">Dictate</p>
+          <h2 class="mt-3 font-display text-4xl font-bold tracking-tight text-quill-900 sm:text-5xl">Just talk.</h2>
+          <p class="mt-6 text-lg leading-8 text-slate-600">Say <em class="not-italic font-semibold text-quill-700">“black t-shirt, large, good condition, thirty five dollars.”</em> Each word you say is understood and placed in its column as you say it, and you can see it happen before anything is written.</p>
+          <p class="mt-4 text-lg leading-8 text-slate-600">Say <em class="not-italic font-semibold text-quill-700">“next row”</em> and the row is saved into your spreadsheet. No typing, no clicking between cells.</p>
+        </div>
+        <figure class="reveal-right justify-self-center lg:justify-self-end" style="transition-delay:120ms">
+          <div class="window w-full max-w-[560px] origin-center">
+            <div class="window-bar"><i class="bg-[#ff5f57]"></i><i class="bg-[#febc2e]"></i><i class="bg-[#28c840]"></i><span class="ml-3 text-sm text-slate-500">Quill</span></div>
+            <img src="/assets/screens/main.svg" alt="Quill listening: the words you said as pills, each value in its column, ready to save as a row" class="block w-full" width="453" height="446">
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2. term helper -->
+    <section id="helper" class="relative bg-gradient-to-b from-quill-50 to-white">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:grid-cols-2 lg:gap-20">
+        <figure class="reveal-left order-last justify-self-center lg:order-first lg:justify-self-start">
+          <div class="window w-full max-w-[560px]">
+            <div class="window-bar"><i class="bg-[#ff5f57]"></i><i class="bg-[#febc2e]"></i><i class="bg-[#28c840]"></i><span class="ml-3 text-sm text-slate-500">Term Helper</span></div>
+            <img src="/assets/screens/term-helper.svg" alt="The Term Helper asking which column a new word belongs to, with the voice button listening" class="block w-full" width="505" height="410">
+          </div>
+        </figure>
+        <div class="reveal-up">
+          <p class="text-sm font-semibold uppercase tracking-widest text-quill-500">Term Helper</p>
+          <h2 class="mt-3 font-display text-4xl font-bold tracking-tight text-quill-900 sm:text-5xl">A word it doesn't know? Answer by voice.</h2>
+          <p class="mt-6 text-lg leading-8 text-slate-600">New values wait in the Term Helper instead of going into the wrong cell. Say <em class="not-italic font-semibold text-quill-700">“color… yes”</em> to add one, <em class="not-italic font-semibold text-quill-700">“same as L”</em> to teach a synonym, or <em class="not-italic font-semibold text-quill-700">“ignore.”</em> Several answers in one breath work too.</p>
+          <p class="mt-4 text-lg leading-8 text-slate-600">While you answer, Quill listens only for the words an answer is made of, so a TV or a nearby conversation can't answer for you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. it learns -->
+    <section id="learns" class="relative bg-white">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:grid-cols-2 lg:gap-20">
+        <div class="reveal-up">
+          <p class="text-sm font-semibold uppercase tracking-widest text-quill-500">It learns</p>
+          <h2 class="mt-3 font-display text-4xl font-bold tracking-tight text-quill-900 sm:text-5xl">It learns your words, and your habits.</h2>
+          <p class="mt-6 text-lg leading-8 text-slate-600">Say <em class="not-italic font-semibold text-quill-700">“sold means sale date”</em> once and Quill knows. Trim a stray word off a term (“kinda cream” to “cream”) and it skips that word from then on. Everything it has learned is listed in Settings, where you can edit or forget any of it.</p>
+        </div>
+        <figure class="reveal-right justify-self-center lg:justify-self-end">
+          <div class="window w-full max-w-3xl">
+            <div class="window-bar"><i class="bg-[#ff5f57]"></i><i class="bg-[#febc2e]"></i><i class="bg-[#28c840]"></i><span class="ml-3 text-sm text-slate-500">Quill Settings</span></div>
+            <img src="/assets/screens/settings-learned.svg" alt="Settings, Learned Words: the words Quill was taught, and the words it skips" class="block w-full" width="928" height="640">
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 4. small when you need it -->
+    <section class="relative bg-gradient-to-b from-white to-quill-50">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-28 lg:grid-cols-2 lg:gap-20">
+        <figure class="reveal-left order-last justify-self-center lg:order-first lg:justify-self-start">
+          <div class="window w-full max-w-[460px]">
+            <div class="window-bar"><i class="bg-[#ff5f57]"></i><i class="bg-[#febc2e]"></i><i class="bg-[#28c840]"></i><span class="ml-3 text-sm text-slate-500">Quill</span></div>
+            <img src="/assets/screens/mini.svg" alt="Quill's mini view: a small overlay that floats beside your spreadsheet" class="block w-full" width="360" height="186">
+          </div>
+        </figure>
+        <div class="reveal-up">
+          <p class="text-sm font-semibold uppercase tracking-widest text-quill-500">Mini view</p>
+          <h2 class="mt-3 font-display text-4xl font-bold tracking-tight text-quill-900 sm:text-5xl">Small when you need it.</h2>
+          <p class="mt-6 text-lg leading-8 text-slate-600">Shrink Quill to a little overlay that floats beside your spreadsheet. It shows what it heard and the row so far, and stays out of the way of your work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. where your sheet lives -->
+    <section class="bg-quill-50">
+      <div class="mx-auto max-w-5xl px-6 py-24 text-center">
+        <div class="reveal-up">
+          <p class="text-sm font-semibold uppercase tracking-widest text-quill-500">Works with</p>
+          <h2 class="mt-3 font-display text-4xl font-bold tracking-tight text-quill-900 sm:text-5xl">The spreadsheet you already have.</h2>
+          <p class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">Excel, Numbers and LibreOffice Calc, with rows appearing live in the open document as you speak. Quill reads your own headings and drop-down lists, so there is nothing to set up, and nothing to learn about templates.</p>
+          <ul class="mt-10 flex flex-wrap justify-center gap-3 text-sm font-semibold text-quill-800">
+            <li class="rounded-full bg-white px-5 py-2 shadow-sm ring-1 ring-quill-100">Microsoft Excel</li>
+            <li class="rounded-full bg-white px-5 py-2 shadow-sm ring-1 ring-quill-100">Apple Numbers</li>
+            <li class="rounded-full bg-white px-5 py-2 shadow-sm ring-1 ring-quill-100">LibreOffice Calc</li>
+            <li class="rounded-full bg-white px-5 py-2 shadow-sm ring-1 ring-quill-100">.xlsx and .csv files</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. private -->
+    <section id="private" class="bg-white">
+      <div class="mx-auto grid max-w-6xl gap-10 px-6 py-24 md:grid-cols-3">
+        <div class="reveal-up md:col-span-1">
+          <p class="text-sm font-semibold uppercase tracking-widest text-quill-500">Private</p>
+          <h2 class="mt-3 font-display text-4xl font-bold tracking-tight text-quill-900">Your voice stays yours.</h2>
+        </div>
+        <p class="reveal-up text-lg leading-8 text-slate-600 md:col-span-2" style="transition-delay:120ms">Speech recognition runs on your computer. Nothing you say is sent anywhere, and Quill works without an internet connection. The only thing it ever asks the internet is whether a newer version exists.</p>
+      </div>
+    </section>
+
+    <!-- the download segment -->
+    <section id="download" class="relative isolate overflow-hidden bg-gradient-to-br from-quill-700 via-quill-600 to-quill-500">
+      <div class="absolute -left-24 top-0 -z-10 size-96 rounded-full bg-white/10 blur-3xl"></div>
+      <div class="absolute -right-24 bottom-0 -z-10 size-96 rounded-full bg-quill-950/30 blur-3xl"></div>
+      <div class="mx-auto max-w-4xl px-6 py-28 text-center text-white">
+        <img src="/assets/icon-512.png" alt="" class="reveal-up mx-auto size-24 rounded-[22px] shadow-2xl shadow-black/30">
+        <h2 class="reveal-up mt-8 font-display text-4xl font-bold tracking-tight sm:text-6xl">Say It. With Quill.</h2>
+        <p class="reveal-up mt-4 text-lg text-white/85">Available for Mac and Windows. <span data-version>Coming soon</span></p>
+        <div class="reveal-up mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a data-download="mac" href="/download.html" class="btn btn-primary w-full sm:w-auto">
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 20h20"/></svg>
+            <span>Download for Mac <span class="ml-1 text-sm font-normal text-quill-600" data-size></span></span>
+          </a>
+          <a data-download="windows" href="/download.html" class="btn border border-white/50 text-white hover:bg-white/10 w-full sm:w-auto">
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+            <span>Download for Windows <span class="ml-1 text-sm font-normal text-white/70" data-size></span></span>
+          </a>
+        </div>
+        <p class="reveal-up mt-6 text-sm text-white/70"><a class="underline underline-offset-4 hover:text-white" href="/download.html">All downloads and install help</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-quill-950 text-sm text-quill-200">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-10 sm:flex-row">
+      <p class="flex items-center gap-3"><img src="/assets/icon-512.png" alt="" class="size-6 rounded-md"> Quill · Say It. With Quill.</p>
+      <p class="flex gap-6"><a class="hover:text-white" href="/download.html">Download</a><a class="hover:text-white" href="https://github.com/sadmicrowave/quill-dictation-app" rel="noopener">GitHub</a><a class="hover:text-white" href="#private">Privacy</a></p>
+    </div>
+  </footer>
+</body>
+</html>

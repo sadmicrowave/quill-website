@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download Quill</title>
+  <meta name="description" content="Download Quill for Mac or Windows. Dictate into Excel, Numbers or LibreOffice; speech recognition runs on your computer.">
+  <meta name="theme-color" content="#7a55c2">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body class="bg-quill-50">
+  <nav class="fixed inset-x-0 top-0 z-50 bg-white/85 shadow-sm backdrop-blur-md" aria-label="Main">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+      <a href="/" class="flex items-center gap-3" aria-label="Quill home">
+        <img src="/assets/icon-512.png" alt="" class="size-9 rounded-[10px] shadow-md shadow-black/20">
+        <span class="font-display text-xl font-semibold tracking-tight text-quill-900">Quill</span>
+      </a>
+      <a href="/" class="text-sm font-medium text-slate-600 hover:text-quill-600">Back to the tour</a>
+    </div>
+  </nav>
+
+  <main class="mx-auto max-w-5xl px-6 pb-24 pt-32">
+    <header class="text-center">
+      <img src="/assets/icon-512.png" alt="" class="mx-auto size-24 rounded-[22px] shadow-xl shadow-quill-900/25">
+      <h1 class="mt-8 font-display text-4xl font-bold tracking-tight text-quill-900 sm:text-5xl">Download Quill</h1>
+      <p class="mt-3 text-lg text-slate-600"><span data-version>Coming soon</span> · Mac and Windows</p>
+    </header>
+
+    <section class="mt-14 grid gap-6 md:grid-cols-2" aria-label="Downloads">
+      <article class="rounded-3xl bg-white p-8 shadow-xl shadow-quill-900/10 ring-1 ring-quill-100 [html[data-os=mac]_&]:ring-2 [html[data-os=mac]_&]:ring-quill-500">
+        <h2 class="font-display text-2xl font-semibold text-quill-900">Mac</h2>
+        <p class="mt-2 text-slate-600">Works with Numbers, Excel and LibreOffice. Rows appear live in the open document.</p>
+        <a data-download="mac" href="https://github.com/sadmicrowave/quill-dictation-app/releases" class="btn btn-brand mt-6 w-full">Download for Mac <span class="text-sm font-normal text-white/80" data-size></span></a>
+        <ol class="mt-6 list-decimal space-y-2 pl-5 text-sm leading-6 text-slate-600">
+          <li>Open the download and drag Quill to your Applications folder.</li>
+          <li>Open Quill. The first time, allow the microphone, and allow Quill to control your spreadsheet program when it asks.</li>
+          <li>Open a spreadsheet, press <strong>Start Listening</strong>, and talk.</li>
+        </ol>
+      </article>
+      <article class="rounded-3xl bg-white p-8 shadow-xl shadow-quill-900/10 ring-1 ring-quill-100 [html[data-os=windows]_&]:ring-2 [html[data-os=windows]_&]:ring-quill-500">
+        <h2 class="font-display text-2xl font-semibold text-quill-900">Windows</h2>
+        <p class="mt-2 text-slate-600">Works with Excel and LibreOffice, and with .xlsx and .csv files.</p>
+        <a data-download="windows" href="https://github.com/sadmicrowave/quill-dictation-app/releases" class="btn btn-brand mt-6 w-full">Download for Windows <span class="text-sm font-normal text-white/80" data-size></span></a>
+        <ol class="mt-6 list-decimal space-y-2 pl-5 text-sm leading-6 text-slate-600">
+          <li>Run the installer. If Windows asks whether to trust it, choose <em>More info</em> then <em>Run anyway</em>.</li>
+          <li>Open Quill and allow the microphone.</li>
+          <li>Open a spreadsheet, press <strong>Start Listening</strong>, and talk.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="mt-14 rounded-3xl bg-white p-8 ring-1 ring-quill-100">
+      <h2 class="font-display text-2xl font-semibold text-quill-900">Good to know</h2>
+      <dl class="mt-4 grid gap-6 text-slate-600 sm:grid-cols-3">
+        <div><dt class="font-semibold text-quill-800">Private</dt><dd class="mt-1 text-sm leading-6">Speech recognition runs on your computer. Nothing you say is sent anywhere.</dd></div>
+        <div><dt class="font-semibold text-quill-800">Up to date</dt><dd class="mt-1 text-sm leading-6">Quill checks for a newer version when it starts, and tells you in Settings > About.</dd></div>
+        <div><dt class="font-semibold text-quill-800">Every version</dt><dd class="mt-1 text-sm leading-6"><a data-release-page class="text-quill-600 underline underline-offset-4 hover:text-quill-500" href="https://github.com/sadmicrowave/quill-dictation-app/releases">Release notes and older downloads</a>.</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="bg-quill-950 text-sm text-quill-200">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-10 sm:flex-row">
+      <p class="flex items-center gap-3"><img src="/assets/icon-512.png" alt="" class="size-6 rounded-md"> Quill · Say It. With Quill.</p>
+      <p class="flex gap-6"><a class="hover:text-white" href="/">Home</a><a class="hover:text-white" href="https://github.com/sadmicrowave/quill-dictation-app" rel="noopener">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
