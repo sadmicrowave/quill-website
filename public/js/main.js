@@ -71,8 +71,11 @@
   var os = /Mac|iPhone|iPad/i.test(navigator.platform || navigator.userAgent) ? "mac" : /Win/i.test(navigator.platform || navigator.userAgent) ? "windows" : "other";
   document.documentElement.dataset.os = os;
 
+  // The Mac downloads are one per chip: "mac" is Apple Silicon (the common one), "mac-intel" the Intel build.
   function pick(assets, kind) {
-    var rules = kind === "mac" ? [/\.dmg$/i, /mac.*\.zip$/i, /darwin|macos|osx/i] : [/\.exe$/i, /\.msi$/i, /win.*\.zip$/i, /windows/i];
+    var rules = kind === "mac" ? [/(silicon|arm64|apple).*\.dmg$/i, /\.dmg$/i, /mac.*\.zip$/i, /darwin|macos|osx/i]
+      : kind === "mac-intel" ? [/(intel|x86|x64).*\.dmg$/i]
+      : [/\.exe$/i, /\.msi$/i, /win.*\.zip$/i, /windows/i];
     for (var i = 0; i < rules.length; i++) {
       var hit = assets.find(function (a) { return rules[i].test(a.name); });
       if (hit) return hit;
@@ -85,16 +88,17 @@
     var tag = release && release.tag_name ? release.tag_name.replace(/^v/i, "") : "";
     document.querySelectorAll("[data-version]").forEach(function (el) { el.textContent = tag ? "Version " + tag : "Coming soon"; });
     document.querySelectorAll("[data-release-page]").forEach(function (el) { el.href = (release && release.html_url) || "https://github.com/" + REPO + "/releases"; });
-    ["mac", "windows"].forEach(function (kind) {
+    ["mac", "mac-intel", "windows"].forEach(function (kind) {
       var asset = release && release.assets ? pick(release.assets, kind) : null;
       document.querySelectorAll('[data-download="' + kind + '"]').forEach(function (el) {
+        var goesToPage = el.hasAttribute("data-go");            // (the home page's buttons lead to the download page, which has the first-run notes)
         if (asset) {
-          el.href = asset.browser_download_url;
+          if (!goesToPage) el.href = asset.browser_download_url;
           el.removeAttribute("aria-disabled");
           var size = el.querySelector("[data-size]");
           if (size) size.textContent = mb(asset.size).replace(/^ · /, "");
         } else {
-          el.href = (release && release.html_url) || "https://github.com/" + REPO + "/releases";
+          if (!goesToPage) el.href = (release && release.html_url) || "https://github.com/" + REPO + "/releases";
           var s = el.querySelector("[data-size]");
           if (s) s.textContent = release ? "See the release" : "Release coming soon";
         }
